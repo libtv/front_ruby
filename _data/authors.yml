@@ -1,0 +1,20 @@
+##ghost:
+#  username: ghost
+#  name: Ghost
+#  url_full: http://jekyller.github.io/jasper2/
+#  url: jekyller.github.io/jasper2
+#  bio: The professional publishing platform
+#  picture: assets/images/ghost.png
+#  facebook: ghost
+#  twitter: tryghost
+#  cover: False
+libtv :
+  username: libtv
+  name: 김준호                                                     # user full name : Martin Luther King
+  url_full: http://libtv.github.io/               # Homepage url
+  url: http://github.com/libtv
+  bio: 풀스택 개발자를 위해 천천히 노력하자
+  picture: assets/images/junho.jpg   # author image
+  facebook:             # facebook ID
+  twitter:              # twitter ID
+  cover: False

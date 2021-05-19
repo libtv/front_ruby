@@ -1,0 +1,68 @@
+---
+layout: default
+current: tag
+title: Tag Page
+cover: false
+class: 'tag-template'
+navigation: True
+logo: 'assets/images/ghost.png'
+---
+
+<!-- default -->
+<!-- The tag above means - insert everything in this file into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<!-- #tag -->
+{% include dynamic_tag_info.html %}
+<header class="site-header outer {% if cover or page.cover %}" style="background-image: url({{ site.baseurl }}{% if cover %}{{ cover }}{% else %}{{ page.cover }}{% endif%}) {% else %}no-cover{% endif %}">
+    <div class="inner">
+        {% include site-nav.html %}
+        <div class="site-header-content">
+            <h1 class="site-title">{{ page.tag | capitalizeall }}</h1>
+            <h2 class="site-description">
+                {% if tag_description %}
+                    {{ tag_description }}
+                {% elsif page.tag %}
+    			    A collection of {{ paginator.total_posts }} posts
+                {% endif %}
+            </h2>
+        </div>
+    </div>
+</header>
+<!-- tag -->
+
+<!-- The main content area -->
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <div class="post-feed">
+            <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
+            <!--
+            {%  include post-card.html %}
+            -->
+            <article class="post-card tag-template no-image">
+                <div class="post-card-content">
+                    <span class="post-card-content-link">
+                    <header class="post-card-header">
+                    
+                        <span style="font-size: 24px; color: darkblue;">
+                            <i class="fa fa-commenting"></i>
+                        </span>
+                        <strong>본 내용은 여러 절의 내용으로 구성되어 있습니다.</strong>
+                        
+                        {% for post in paginator.posts %}
+                        <a class="post-card-content-link" href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}">
+                            <span style="font-size: 18px; color: Tomato;">
+                                <i class="fa fa-arrow-circle-o-right"></i>
+                            </span>
+                            <strong>{{ post.title }}</strong>
+                        </a>
+                        {% endfor %}
+                    </header>
+                    <div style="height:20px"></div>
+                    </span>
+                </div>
+            </article>
+           
+        </div>
+    </div>
+</main>
